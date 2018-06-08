@@ -15,7 +15,8 @@ pipeline {
             branch 'hotfix/*';
             branch 'develop';
             branch 'feature/*';
-            branch 'bugfix/*'
+            branch 'bugfix/*';
+            branch 'PR-*';
           }
         }
         environment {
