@@ -13,6 +13,7 @@ pipeline {
           anyOf {
             branch 'release/*';
             branch 'hotfix/*';
+            branch 'develop';
             branch 'feature/*';
             branch 'bugfix/*'
           }
