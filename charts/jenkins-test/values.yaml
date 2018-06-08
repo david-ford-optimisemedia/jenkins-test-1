@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: draft
-  tag: dev
+  repository: 100.69.216.58:5000/david-ford-optimisemedia/jenkins-test
+  tag: 0.0.5
   pullPolicy: IfNotPresent
 service:
   name: jenkins-test
