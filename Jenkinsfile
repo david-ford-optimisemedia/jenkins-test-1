@@ -45,7 +45,6 @@ pipeline {
         when {
           anyOf {
             branch 'master';
-            branch 'develop'
           }
         }
         steps {
@@ -77,7 +76,6 @@ pipeline {
         when {
           anyOf {
             branch 'master';
-            branch 'develop'
           }
         }
         steps {
