@@ -10,7 +10,12 @@ pipeline {
     stages {
       stage('CI Build and push snapshot') {
         when {
-          branch 'PR-*'
+          anyOf {
+            branch 'release/*';
+            branch 'hotfix/*';
+            branch 'feature/*';
+            branch 'bugfix/*'
+          }
         }
         environment {
           PREVIEW_VERSION = "0.0.0-SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
@@ -38,7 +43,9 @@ pipeline {
       }
       stage('Build Release') {
         when {
-          branch 'master'
+          anyOf {
+            branch 'master';
+          }
         }
         steps {
           container('nodejs') {
@@ -67,7 +74,9 @@ pipeline {
       }
       stage('Promote to Environments') {
         when {
-          branch 'master'
+          anyOf {
+            branch 'master';
+          }
         }
         steps {
           dir ('./charts/jenkins-test') {
